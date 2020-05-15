@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema elementFormDefault="qualified"
+	attributeFormDefault="unqualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:include schemaLocation="Common.xsd" />
+
+	<xsd:complexType name="SiebelMessageResponseType">
+		<xsd:all>
+			<xsd:element name="Header" type="HeaderResponseType" />
+			<xsd:element name="Body" type="BodyType" />
+		</xsd:all>
+	</xsd:complexType>
+
+	<xsd:complexType name="HeaderResponseType">
+		<xsd:all>
+			<xsd:element name="Responsecode" type="xsd:string" />
+			<xsd:element name="Sent" type="SiebelDateType" />
+			<xsd:element name="From" type="xsd:string" />
+			<xsd:element name="To" type="xsd:string" />
+			<xsd:element name="Error" type="ErrorType" />
+		</xsd:all>
+	</xsd:complexType>
+
+	<xsd:element name="SiebelMessage" type="SiebelMessageResponseType" />
+</xsd:schema>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+	<xsd:include schemaLocation="../../../../igc/crm/xsd/MemberQueryResponse.xsd"/>
+
+	<xsd:element name="FtrCustomer" substitutionGroup="Customer" type="FtrCustomerType"/>
+
+
+	<xsd:complexType name="FtrCustomerType">
+		<xsd:complexContent>
+			<xsd:extension base="CustomerType">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="EmailVerificationFlag" type="BooleanType"/>
+					<xsd:element minOccurs="0" name="EShopperFTRFlag" type="BooleanType"/>
+					<xsd:element minOccurs="0" name="NewsletterSubscriberFTRFlag" type="BooleanType"/>
+					<xsd:element minOccurs="0" name="MemberPhase" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="LastTierChgAmt" type="xsd:double"/>
+					<xsd:element minOccurs="0" name="Contact" type="ContactType"/>
+					<xsd:element minOccurs="0" name="Accounts" type="AccountsType"/>
+					<xsd:element minOccurs="0" name="TierStartDate" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="TierEndDate" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="ConAttribs" type="ConAttribsType"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="ContactType">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="SuppressFTRSMS" type="BooleanType"/>
+			<xsd:element minOccurs="0" name="SuppressFTREmail" type="BooleanType"/>
+			<xsd:element minOccurs="0" name="SuppressFTRDM" type="BooleanType"/>
+			<xsd:element minOccurs="0" name="SuppressPNSSMS" type="BooleanType"/>
+			<xsd:element minOccurs="0" name="SuppressPNSEmail" type="BooleanType"/>
+			<xsd:element minOccurs="0" name="SuppressPNSDM" type="BooleanType"/>
+			<xsd:element minOccurs="0" name="SuppressWTCSMS" type="BooleanType"/>
+			<xsd:element minOccurs="0" name="SuppressWTCEmail" type="BooleanType"/>
+			<xsd:element minOccurs="0" name="SuppressWTCDM" type="BooleanType"/>
+			<xsd:element minOccurs="0" name="Occupation" type="xsd:string"/>
+        </xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="AccountsType">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" maxOccurs="unbounded" name="Account" type="AccountType" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="AccountType">
+		<xsd:all>
+			<xsd:element minOccurs="0" name="AccID" type="xsd:string" />
+			<xsd:element minOccurs="0" name="AccValue" type="xsd:decimal" />
+		</xsd:all>
+	</xsd:complexType>
+
+	<xsd:complexType name="ConAttribsType">
+		<xsd:sequence>
+			<xsd:element name="ConAttrib" type="ConAttrib" minOccurs="0"
+						 maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="ConAttrib">
+		<xsd:sequence>
+			<xsd:element name="CAttName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="CAttValue" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="CActiveFlag" type="BooleanType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

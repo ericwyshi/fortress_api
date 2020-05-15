@@ -1,25 +1,18 @@
 package com.hybris.fortress;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.http.HttpMethod;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.annotation.HttpMethodConstraint;
+import javax.annotation.Resource;
+import java.util.Map;
 
 @SpringBootApplication
-@RestController
 public class FortressApiApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(FortressApiApplication.class, args);
     }
-
-    @RequestMapping( value = "/sayhi", method = RequestMethod.GET)
-    public String  sayHi(){
-        return "sayhi";
-    }
-
 }

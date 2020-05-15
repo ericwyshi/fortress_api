@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema elementFormDefault="qualified"
+	attributeFormDefault="unqualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:include schemaLocation="Common.xsd" />
+
+	<xsd:complexType name="SiebelMessageRequestType">
+		<xsd:sequence>
+			<xsd:element name="Header" type="HeaderRequestType" />
+			<xsd:element name="Body" type="BodyType" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="HeaderRequestType">
+		<xsd:sequence>
+			<xsd:element name="Action" type="ActionType" />
+			<xsd:element name="Env" type="xsd:string" />
+			<xsd:element name="BUID" type="xsd:string" />
+			<xsd:element name="Sent" type="SiebelDateType" />
+			<xsd:element name="From" type="xsd:string" />
+			<xsd:element name="To" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>	
+
+	<xsd:element name="SiebelMessage" type="SiebelMessageRequestType" />
+</xsd:schema>

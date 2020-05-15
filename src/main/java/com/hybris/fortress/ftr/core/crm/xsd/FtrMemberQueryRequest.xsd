@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+    <xsd:include schemaLocation="../../../../igc/crm/xsd/MemberQueryRequest.xsd"/>
+
+    <xsd:element name="FtrCustomer" substitutionGroup="Customer" type="FtrCustomerType"/>
+
+    <xsd:complexType name="FtrCustomerType">
+        <xsd:complexContent>
+            <xsd:extension base="CustomerType">
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="ProgramName" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="MemberPhase" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="MobileNumberLocal" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="MobileNumberCountryCode" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="Email" type="xsd:string"/>
+                    <xsd:element minOccurs="0" name="BindCards" type="BindCardsType"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="BindCardsType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="Card" type="Card" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="Card">
+        <xsd:all>
+            <xsd:element name="BindCardNumber" type="xsd:string" />
+        </xsd:all>
+    </xsd:complexType>
+</xsd:schema>

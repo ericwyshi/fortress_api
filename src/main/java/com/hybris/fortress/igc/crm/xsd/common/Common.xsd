@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+
+
+	<xsd:simpleType name="ActionType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="QUERY"/>
+			<xsd:enumeration value="CREATE"/>
+			<xsd:enumeration value="UPDATE"/>
+			<xsd:enumeration value="BINDCARD" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="EmptyType">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="0"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="BooleanType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Y"/>
+			<xsd:enumeration value="N"/>
+			<xsd:enumeration value=""/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="GenderType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="M"/>
+			<xsd:enumeration value="F"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+
+	<xsd:simpleType name="CardTypeType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Gold"/>
+			<xsd:enumeration value="Platinum"/>
+			<xsd:enumeration value="Regular"/>
+			<xsd:enumeration value="Silver"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="LanguageCodeType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="ARA">
+				<xsd:annotation>
+					<xsd:documentation>Arabic (Saudi Arabia)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CHS">
+				<xsd:annotation>
+					<xsd:documentation>Chinese (PRC)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CHT">
+				<xsd:annotation>
+					<xsd:documentation>Chinese (Taiwan)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CSY">
+				<xsd:annotation>
+					<xsd:documentation>Czech</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DAN">
+				<xsd:annotation>
+					<xsd:documentation>Danish</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DEU">
+				<xsd:annotation>
+					<xsd:documentation>German</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ELL">
+				<xsd:annotation>
+					<xsd:documentation>Greek</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ENG">
+				<xsd:annotation>
+					<xsd:documentation>English-British</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ENU">
+				<xsd:annotation>
+					<xsd:documentation>English-American</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ESN">
+				<xsd:annotation>
+					<xsd:documentation>Spanish (Modern)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ESP">
+				<xsd:annotation>
+					<xsd:documentation>Spanish</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="FIN">
+				<xsd:annotation>
+					<xsd:documentation>Finnish</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="FRA">
+				<xsd:annotation>
+					<xsd:documentation>French</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="FRB">
+				<xsd:annotation>
+					<xsd:documentation>French-Belgian</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="HEB">
+				<xsd:annotation>
+					<xsd:documentation>Hebrew</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ITA">
+				<xsd:annotation>
+					<xsd:documentation>Italian</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="JPN">
+				<xsd:annotation>
+					<xsd:documentation>Japanese</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="KOR">
+				<xsd:annotation>
+					<xsd:documentation>Korean</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="NLD">
+				<xsd:annotation>
+					<xsd:documentation>Dutch</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PLK">
+				<xsd:annotation>
+					<xsd:documentation>Polish</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PSE">
+				<xsd:annotation>
+					<xsd:documentation>Pseudo</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PTB">
+				<xsd:annotation>
+					<xsd:documentation>Portuguese-Brazilian</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PTG">
+				<xsd:annotation>
+					<xsd:documentation>Portuguese</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="RUS">
+				<xsd:annotation>
+					<xsd:documentation>Russian</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SVE">
+				<xsd:annotation>
+					<xsd:documentation>Swedish</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="THA">
+				<xsd:annotation>
+					<xsd:documentation>Thailand</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TRK">
+				<xsd:annotation>
+					<xsd:documentation>Turkish</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="PrefCommMethodType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Email"/>
+			<xsd:enumeration value="Mail"/>
+			<xsd:enumeration value="SMS"/>
+			<xsd:enumeration value="Home Phone"/>
+			<xsd:enumeration value="Mobile"/>
+			<xsd:enumeration value="Pager"/>
+			<xsd:enumeration value="Work Phone"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="MemberStatusType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Active"/>
+			<xsd:enumeration value="Cancelled"/>
+			<xsd:enumeration value="In Progress"/>
+			<xsd:enumeration value="Inactive"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="MemberSubStatusType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="In Progress"/>
+			<xsd:enumeration value="Inactive"/>
+			<xsd:enumeration value="Merged"/>
+			<xsd:enumeration value="Registered"/>
+			<xsd:enumeration value="Registering"/>
+			<xsd:enumeration value="Under-Investigation"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="CardStatusType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Cancelled"/>
+			<xsd:enumeration value="Damaged"/>
+			<xsd:enumeration value="In Progress"/>
+			<xsd:enumeration value="Inactive"/>
+			<xsd:enumeration value="Issued"/>
+			<xsd:enumeration value="Lost/Stolen"/>
+			<xsd:enumeration value="Printed"/>
+			<xsd:enumeration value="To Be Delivered"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="PersonalTitleType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Dr."/>
+			<xsd:enumeration value="Miss"/>
+			<xsd:enumeration value="Mr."/>
+			<xsd:enumeration value="Mrs."/>
+			<xsd:enumeration value="Ms."/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="SiebelDateType">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="\d{2}/\d{2}/\d{4}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="SiebelDateTimeType">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="\d{2}/\d{2}/\d{4} \d{2}:\d{2}:\d{2}"/>
+		</xsd:restriction>
+	</xsd:simpleType>	
+
+	<xsd:simpleType name="NillableSiebelDateType">
+		<xsd:union memberTypes="SiebelDateType EmptyType"/>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="NillableSiebelDateTimeType">
+		<xsd:union memberTypes="SiebelDateTimeType EmptyType"/>
+	</xsd:simpleType>	
+	
+	<xsd:simpleType name="NillableBooleanType">
+		<xsd:union memberTypes="BooleanType EmptyType"/>
+	</xsd:simpleType>	
+	<xsd:simpleType name="NillableLanguageCodeType">
+		<xsd:union memberTypes="LanguageCodeType EmptyType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="NillableGenderType">
+		<xsd:union memberTypes="GenderType EmptyType"/>
+	</xsd:simpleType>
+
+	<xsd:complexType name="ErrorType">
+		<xsd:sequence>
+			<xsd:element name="Code" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="BodyType">
+		<xsd:sequence>
+			<xsd:element ref="AbstractCustomer"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- must be overridden in concrete message definition -->
+	<xsd:element abstract="true" name="AbstractCustomer"/>
+</xsd:schema>

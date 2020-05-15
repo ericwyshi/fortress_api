@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema elementFormDefault="qualified"
+	attributeFormDefault="unqualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:include schemaLocation="common/Response.xsd" />
+
+	<xsd:element name="Customer" type="CustomerType" substitutionGroup="AbstractCustomer"/>
+	<xsd:complexType name="CustomerType">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="MemberNumber" type="xsd:string" />
+			<xsd:element minOccurs="0" name="CardNumber" type="xsd:string" />
+			<xsd:element minOccurs="0" name="ExternalCustomerId" type="xsd:string" />
+			<xsd:element minOccurs="0" name="PersonalTitle" type="xsd:string" />
+			<xsd:element minOccurs="0" name="JobTitle" type="xsd:string" />
+			<xsd:element minOccurs="0" name="EmployeeFlag" type="BooleanType" />
+			<xsd:element minOccurs="0" name="EmployeeNumber" type="xsd:string" />
+			<xsd:element minOccurs="0" name="PersonalID" type="xsd:string" />
+			<xsd:element minOccurs="0" name="Gender" type="NillableGenderType" />
+			<xsd:element minOccurs="0" name="LastName" type="xsd:string" />
+			<xsd:element minOccurs="0" name="MiddleName" type="xsd:string" />
+			<xsd:element minOccurs="0" name="FirstName" type="xsd:string" />
+			<xsd:element minOccurs="0" name="BirthDate" type="NillableSiebelDateType" />
+			<xsd:element minOccurs="0" name="MaritalStatus" type="xsd:string" />
+			<xsd:element minOccurs="0" name="PointValue" type="xsd:integer" />
+			<xsd:element minOccurs="0" name="GoldCode" type="xsd:string" />
+			<xsd:element minOccurs="0" name="AddressNumber" type="xsd:string" />
+			<xsd:element minOccurs="0" name="AddressLine" type="xsd:string" />
+			<xsd:element minOccurs="0" name="AddressLine2" type="xsd:string" />
+			<xsd:element minOccurs="0" name="AddressLine3" type="xsd:string" />
+			<xsd:element minOccurs="0" name="AddressLine4" type="xsd:string" />
+			<xsd:element minOccurs="0" name="AddressLine5" type="xsd:string" />
+			<xsd:element minOccurs="0" name="AddressLine6" type="xsd:string" />
+			<xsd:element minOccurs="0" name="AddressLine7" type="xsd:string" />
+			<xsd:element minOccurs="0" name="ZipCode" type="xsd:string" />
+			<xsd:element minOccurs="0" name="ZipcodeExt" type="xsd:string" />
+			<xsd:element minOccurs="0" name="Town" type="xsd:string" />
+			<xsd:element minOccurs="0" name="District" type="xsd:string" />
+			<xsd:element minOccurs="0" name="MetroArea" type="xsd:string" />
+			<xsd:element minOccurs="0" name="CrossStreet" type="xsd:string" />
+			<xsd:element minOccurs="0" name="County" type="xsd:string" />
+			<xsd:element minOccurs="0" name="Province" type="xsd:string" />
+			<xsd:element minOccurs="0" name="State" type="xsd:string" />
+			<xsd:element minOccurs="0" name="Country" type="xsd:string" />
+			<xsd:element minOccurs="0" name="AddressInvalidFlag" type="BooleanType" />
+			<xsd:element minOccurs="0" name="Email" type="xsd:string" />
+			<xsd:element minOccurs="0" name="Phone" type="xsd:string" />
+			<xsd:element minOccurs="0" name="MobilePhone" type="xsd:string" />
+			<xsd:element minOccurs="0" name="BlockedFlag" type="BooleanType" />
+			<xsd:element minOccurs="0" name="InactiveFlag" type="NillableBooleanType" />
+			<xsd:element minOccurs="0" name="AnonymousFlag" type="NillableBooleanType" />
+			<xsd:element minOccurs="0" name="ExternMailFlag" type="BooleanType" />
+			<xsd:element minOccurs="0" name="ExternEmailFlag" type="BooleanType" />
+			<xsd:element minOccurs="0" name="ExternSmsFlag" type="BooleanType" />
+			<xsd:element minOccurs="0" name="InternMailFlag" type="BooleanType" />
+			<xsd:element minOccurs="0" name="InternEmailFlag" type="BooleanType" />
+			<xsd:element minOccurs="0" name="InternSmsFlag" type="BooleanType" />
+			<xsd:element minOccurs="0" name="PrivacyAgreeFlag" type="BooleanType" />
+			<xsd:element minOccurs="0" name="ReceivePromotionFlag" type="BooleanType" />
+			<xsd:element minOccurs="0" name="IntialMailFlag" type="NillableBooleanType" />
+			<xsd:element minOccurs="0" name="MailVerificationFlag" type="NillableBooleanType" />
+			<xsd:element minOccurs="0" name="LanguageCode" type="NillableLanguageCodeType" />
+			<xsd:element minOccurs="0" name="VatNumber" type="xsd:string" />
+			<xsd:element minOccurs="0" name="IssuedStore" type="xsd:string" />
+			<xsd:element minOccurs="0" name="PointsReconciled" type="xsd:integer" />
+			<xsd:element minOccurs="0" name="PointsWaiting" type="xsd:integer" />
+			<xsd:element minOccurs="0" name="StartDate" type="NillableSiebelDateTimeType" />
+			<xsd:element minOccurs="0" name="AccrualStartDate" type="NillableSiebelDateType" />
+			<xsd:element minOccurs="0" name="LastUpdatedDate" type="NillableSiebelDateType" />
+			<xsd:element minOccurs="0" name="EnrollmentChannel" type="xsd:string" />
+			<xsd:element minOccurs="0" name="ActivationChannel" type="xsd:string" />
+			<xsd:element minOccurs="0" name="ApprovalDate" type="NillableSiebelDateType" />
+			<xsd:element minOccurs="0" name="CurrencyCode" type="xsd:string" />
+			<xsd:element minOccurs="0" name="SalesValueToGetCheque" type="xsd:float" />
+			<xsd:element minOccurs="0" name="PointsToGetCheque" type="xsd:decimal" />
+			<xsd:element minOccurs="0" name="LastAccrualTxnDate" type="NillableSiebelDateType" />
+			<xsd:element minOccurs="0" name="Pareto" type="xsd:string" />
+			<xsd:element minOccurs="0" name="ParetoTendency" type="xsd:string" />
+			<xsd:element minOccurs="0" name="CardType" type="xsd:string" />
+			<xsd:element minOccurs="0" name="LastTxnDate" type="NillableSiebelDateType" />
+			<xsd:element minOccurs="0" name="LastRedemptionDate" type="NillableSiebelDateType" />
+			<xsd:element minOccurs="0" name="ChildNum" type="xsd:string" />
+			<xsd:element minOccurs="0" name="PersonalIncome" type="xsd:string" />
+			<xsd:element minOccurs="0" name="HouseholdIncome" type="xsd:string" />
+			<xsd:element minOccurs="0" name="PassportNumber" type="xsd:string" />
+			<xsd:element minOccurs="0" name="OtherLanguageLastName" type="xsd:string" />
+			<xsd:element minOccurs="0" name="OtherLanguageFirstName" type="xsd:string" />
+			<xsd:element minOccurs="0" name="Education" type="xsd:string" />
+			<xsd:element minOccurs="0" name="Occupation" type="xsd:string" />
+			<xsd:element minOccurs="0" name="Race" type="xsd:string" />
+			<xsd:element minOccurs="0" name="PrefCommMethod" type="xsd:string" />
+			<xsd:element minOccurs="0" name="MemberStatus" type="xsd:string" />
+			<xsd:element minOccurs="0" name="MemberSubStatus" type="xsd:string" />
+			<xsd:element minOccurs="0" name="CardStatus" type="xsd:string" />
+			
+			<xsd:element minOccurs="0" name="ReceivePartnerPromotionFlag" type="BooleanType"/>
+
+			<xsd:element name="Segments" type="SegmentsType" />
+			<xsd:element name="Attributes" type="AttributesType" />
+			<xsd:element name="Children" type="ChildrenType" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="SegmentsType">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" maxOccurs="unbounded" name="Segment" type="SegmentType" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="AttributesType">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" maxOccurs="unbounded" name="Attribute" type="AttributeType" />
+		</xsd:sequence>
+	</xsd:complexType>	
+	
+	<xsd:complexType name="ChildrenType">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" maxOccurs="3" name="Child" type="ChildType" />
+		</xsd:sequence>
+	</xsd:complexType>	
+
+	<xsd:complexType name="SegmentType">
+		<xsd:all>
+			<xsd:element name="SegmentNo" type="xsd:string" />
+			<xsd:element minOccurs="0" name="SegmentName" type="xsd:string" />
+			<xsd:element minOccurs="0" name="SegmentStartDate" type="NillableSiebelDateType" />
+			<xsd:element minOccurs="0" name="SegmentEndDate" type="NillableSiebelDateType" />
+		</xsd:all>
+	</xsd:complexType>
+	
+	<xsd:complexType name="AttributeType">
+		<xsd:all>
+			<xsd:element name="AttName" type="xsd:string" />
+			<xsd:element name="AttValue" type="xsd:string" />
+		</xsd:all>
+	</xsd:complexType>	
+	
+	<xsd:complexType name="ChildType">
+		<xsd:all>
+			<xsd:element minOccurs="0" name="ChildID" type="xsd:string" />
+			<xsd:element minOccurs="0" name="ChildBirthDate" type="xsd:string" />
+			<xsd:element minOccurs="0" name="ChildFirstName" type="xsd:string" />
+			<xsd:element minOccurs="0" name="ChildGender" type="xsd:string" />
+		</xsd:all>
+	</xsd:complexType>		
+</xsd:schema>
+
