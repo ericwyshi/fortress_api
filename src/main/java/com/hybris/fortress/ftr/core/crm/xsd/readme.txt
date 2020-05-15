@@ -1,1 +1,0 @@
-xjc -p gensrc FtrMemberQueryRequest.xsd
