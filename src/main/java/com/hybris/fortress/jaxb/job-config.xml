@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<job-config>
+    <purge-interval>3</purge-interval>
+    <db-info>
+        <dbtype>Oracle</dbtype>
+        <url>oracle:thin:localhost:orcl</url>
+        <username>admin</username>
+        <password>admin</password>
+    </db-info>
+    <job-info>
+        <frequency>
+            <interval-type>WEEKLY</interval-type>
+            <interval>10</interval>
+            <start-time>09:00</start-time>
+        </frequency>
+        <objects-component>
+            <object>
+                <object-name>RUNTIME</object-name>
+                <retention>10</retention>
+            </object>
+            <object>
+                <object-name>BUILDTIME</object-name>
+                <retention>20</retention>
+            </object>
+        </objects-component>
+        <objects-specific>
+            <object>
+                <object-name>GOOD</object-name>
+                <retention>10</retention>
+            </object>
+            <object>
+                <object-name>BUILDTIME</object-name>
+                <retention>20</retention>
+            </object>
+        </objects-specific>
+    </job-info>
+</job-config>

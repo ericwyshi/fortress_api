@@ -1,0 +1,19 @@
+Request & Response :
+
+<?xml version="1.0"?>
+<SiebelMessage>
+    <Header>
+        <Action>QUERY</Action>
+        <Env>Web</Env>
+        <BUID>MBHK</BUID>
+        <Sent>05/17/2020</Sent>
+        <From>WebSite@FTRHK</From>
+        <To>Siebel@Asia</To>
+    </Header>
+    <Body>
+        <Customer>
+            <MemberNumber>123456789</MemberNumber>
+        </Customer>
+    </Body>
+</SiebelMessage>
+

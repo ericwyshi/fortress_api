@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="job-config">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="purge-interval"/>
+        <xs:element ref="db-info"/>
+        <xs:element ref="job-info"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="purge-interval" type="xs:integer"/>
+  <xs:element name="db-info">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="dbtype"/>
+        <xs:element ref="url"/>
+        <xs:element ref="username"/>
+        <xs:element ref="password"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="dbtype" type="xs:NCName"/>
+  <xs:element name="url" type="xs:NMTOKEN"/>
+  <xs:element name="username" type="xs:NCName"/>
+  <xs:element name="password" type="xs:NCName"/>
+  <xs:element name="job-info">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="frequency"/>
+        <xs:element ref="objects-component"/>
+        <xs:element ref="objects-specific"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="frequency">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="interval-type"/>
+        <xs:element ref="interval"/>
+        <xs:element ref="start-time"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="interval-type" type="xs:NCName"/>
+  <xs:element name="interval" type="xs:integer"/>
+  <xs:element name="start-time" type="xs:NMTOKEN"/>
+  <xs:element name="objects-component">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="object"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="objects-specific">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="object"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="object">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="object-name"/>
+        <xs:element ref="retention"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="object-name" type="xs:NCName"/>
+  <xs:element name="retention" type="xs:integer"/>
+</xs:schema>
